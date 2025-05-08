@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dharsan Karmegam - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1a5276;
+      --accent: #3498db;
+      --bg: #f5f7fa;
+      --text: #2c3e50;
+      --white: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--white);
+      box-shadow: 0 2px 8px var(--shadow);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.8rem;
+    }
+
+    .nav-container button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: color 0.3s;
+    }
+
+    .nav-container button:hover,
+    .nav-container button.active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .contact {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact a {
+      color: var(--primary);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1.5rem;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    section.active h2::before {
+      content: '➤ ';
+      color: var(--accent);
+      animation: slideInLeft 0.6s ease-out;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .project, .conference {
+      background: var(--white);
+      padding: 1.2rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--shadow);
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .project:hover, .conference:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    em {
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <button class="tab-link active" onclick="showSection('education')">Education</button>
+      <button class="tab-link" onclick="showSection('skills')">Skills</button>
+      <button class="tab-link" onclick="showSection('projects')">Projects</button>
+      <button class="tab-link" onclick="showSection('certs')">Certifications</button>
+      <button class="tab-link" onclick="showSection('conference')">Conference</button>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Dharsan Karmegam</h1>
+    <p class="subtitle">Aspiring Data Science Professional</p>
+    <div class="contact">
+      <a href="mailto:dharsank82@gmail.com">Email</a> |
+      <a href="https://github.com/Dharsan197" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/dharsan-k-2819jd57/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="education" class="active">
+    <h2>Education</h2>
+    <p><strong>M Kumarasamy College of Engineering</strong><br>
+      B.Tech. in Artificial Intelligence and Data Science<br>
+      <em>Expected Graduation: June 2026 | GPA: 8/10</em></p>
+
+    <p><strong>A.E.T. Matric. Hr. Sec. School, Erode</strong><br>
+      High School – Computer Science and Mathematics<br>
+      <em>Graduated: June 2022 | Score: 89%</em></p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <p><strong>Languages:</strong> Python, C, Java, HTML/CSS, PHP, SQL</p>
+    <p><strong>Tools:</strong> Git/GitHub, Jupyter Notebook, IBM SPSS, VS Code, Eclipse, Mural</p>
+    <p><strong>Frameworks:</strong> TensorFlow, PyTorch, React</p>
+    <p><strong>Libraries:</strong> pandas, NumPy, Matplotlib, Scikit-learn, NLTK, OpenCV, Seaborn</p>
+  </section>
+
+  <section id="projects">
+    <h2>Key Projects</h2>
+
+    <div class="project">
+      <h3>WordsUrAct <em>(Mar – Present 2024)</em></h3>
+      <p><em>Arduino C++, MySQL, HTML/CSS/JS, Python</em></p>
+      <ul>
+        <li>AI avatar system for real-time voice + gesture communication.</li>
+        <li>Mapped hand gestures to sign language for accessibility.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>GanTex – AI-Driven Textile Pattern Generation</h3>
+      <p><em>Python, GAN, CNN, VAE, HTML/CSS/JS</em><br><em>(Oct – Dec 2024 & Feb – Jun 2024)</em></p>
+      <ul>
+        <li>Pattern generator for textiles using GAN-CNN-VAE hybrid model.</li>
+        <li>Reduced redundancy through CNN-based duplicate detection.</li>
+        <li>Used curated textile datasets to improve pattern diversity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Certifications</h2>
+    <ul>
+      <li>JLPT N5 (2023), JLPT N4 (2024) – Japan Foundation</li>
+      <li>IBM – Statistics 101, Artificial Intelligence Analyst</li>
+      <li>NPTEL – Responsible and Safe AI, Ethical Hacking</li>
+      <li>Coursera – Microsoft Azure IoT Hub</li>
+      <li>Cisco – Data Analytics Essentials</li>
+    </ul>
+  </section>
+
+  <section id="conference">
+    <h2>Conference Presentation</h2>
+    <div class="conference">
+      <p><strong>GANtex – An AI-Based Design Prediction</strong></p>
+      <p><em>1st International Conference on Engineering Solutions and Technology</em><br>
+      November 14–15, 2024 | Erode Sengunthar Engineering College</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateX(0)";
+          entry.target.style.animation = "slideInRight 0.6s ease forwards";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.project, .conference').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
 
